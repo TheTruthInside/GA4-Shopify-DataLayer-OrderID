@@ -366,7 +366,7 @@ __DL__jQueryinterval = setInterval(function(){
         /** DATALAYER: Checkout on Shopify Plus **/
         if(Shopify.Checkout){
             var ecommerce = {
-                'transaction_id': '{{checkout.order_number  | json}}',
+                'transaction_id': '{{checkout.order_id | json}}',  <!-- updated -->
                 'affiliation': {{shop.name | json}},
                 'value': {{checkout.total_price | money_without_currency | replace: ',', '.' | json}},
                 'tax': {{checkout.tax_price | money_without_currency | replace: ',','.' | json}},
@@ -481,10 +481,10 @@ __DL__jQueryinterval = setInterval(function(){
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-XXXXXXX');
+            })(window,document,'script','dataLayer','GTM-XXXXXX');
 
         }); // document ready
     }
 }, 500);
   
-</script>              
+</script>
